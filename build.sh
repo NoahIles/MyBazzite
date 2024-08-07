@@ -13,11 +13,22 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-rpm-ostree install screen
+# rpm-ostree install screen
 
-# this would install a package from rpmfusion
-# rpm-ostree install vlc
+shell_tools=(
+    "zsh"
+    "zsh-autosuggestions"
+    "tealdeer"
+    "bat"
+    "htop"
+    "fzf"
+)
 
-#### Example for enabling a System Unit File
+packages=(
+    $(shell_tools[@])
+)
 
-systemctl enable podman.socket
+rpm-ostree override remove firefox firefox-langpacks
+
+rpm-ostree install $(packages[@])
+brew install dust
