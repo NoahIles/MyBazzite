@@ -25,10 +25,8 @@ shell_tools=(
 )
 
 packages=(
-    ${shell_tools[@]}a
+    ${shell_tools[@]}
 )
-
-rpm-ostree override remove firefox firefox-langpacks
 
 rpm-ostree install ${packages[@]}
 brew install dust
