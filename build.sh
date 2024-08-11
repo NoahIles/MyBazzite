@@ -17,11 +17,13 @@ RELEASE="$(rpm -E %fedora)"
 
 shell_tools=(
     "zsh"
-    "zsh-autosuggestions"
+    "zsh-syntax-highlighting"
+    "fzf"
     "tealdeer"
     "bat"
+    "ripgrep"
     "htop"
-    "fzf"
+    "xsel"
 )
 
 packages=(
@@ -29,4 +31,3 @@ packages=(
 )
 
 rpm-ostree install ${packages[@]}
-brew install dust
