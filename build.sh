@@ -26,8 +26,6 @@ shell_tools=(
     "xsel"
 )
 
-packages=(
-    ${shell_tools[@]}
-)
 
-rpm-ostree install ${packages[@]}
+brew install ${shell_tools[@]}
+# rpm-ostree install ${packages[@]}
