@@ -27,5 +27,13 @@ shell_tools=(
 )
 
 
+# Install Homebrew if it's not already installed
+if ! command -v brew &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Update Homebrew
+brew update
+
 brew install ${shell_tools[@]}
 # rpm-ostree install ${packages[@]}
